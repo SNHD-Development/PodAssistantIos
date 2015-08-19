@@ -1,0 +1,6 @@
+<Alloy>
+		<Window class="container">
+			<Button title="LOGOUT" class="btnLogout" onClick="btnLogout_onClick"></Button>
+			<Button title="Active QR Reader" class="btnQr" onClick="btnQr_onClick"></Button>
+		</Window>
+</Alloy>

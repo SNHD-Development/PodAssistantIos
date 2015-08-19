@@ -1,0 +1,24 @@
+
+".container" : {
+  backgroundColor: 'white',
+}
+
+".btnLogout":{
+	backgroundColor: "#eb0048",
+	color: 'white',
+	width: 60,
+	font: {
+		fontSize: 10
+	},
+	right: 0,
+	top: 20
+}
+
+".btnQr":{
+	width: 200,
+	height: 200,
+	top: 10,
+	backgroundColor: '#eee',
+	color: "#aaa"
+}
+

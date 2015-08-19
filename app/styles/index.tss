@@ -1,0 +1,42 @@
+".container": {
+	backgroundColor:"#fcf4eb"
+}
+
+"Label": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: "#000"
+}
+
+"Button":{
+	backgroundColor: "#00c7eb",
+	color: 'white',
+	width: 150,
+	font: {
+		fontSize: 12
+	},
+}
+
+"TextField":{
+	backgroundColor:'white',
+	width: 200,
+	font: {
+		fontSize: 12
+	},
+	height: 30,
+	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED
+}
+
+"#label": {
+	font: {
+		fontSize: 12
+	}
+}
+
+".appTitle":{
+	top: 110,
+	font: {
+		fontSize: 20,
+		fontFamily: 'Trebuchet MS'
+	},
+}

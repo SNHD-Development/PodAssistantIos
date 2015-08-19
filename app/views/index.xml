@@ -1,0 +1,8 @@
+<Alloy>
+	<Window class="container">
+		<Label class="appTitle">POD ASSISTANT</Label>
+		<TextField hintText="Username" top="20" />
+		<TextField hintText="Password" passwordMask="true" top="10" />
+		<Button top="10" title="LOGIN" onClick="btnLogin_onClick"></Button>
+	</Window>
+</Alloy>
