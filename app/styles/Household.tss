@@ -1,0 +1,130 @@
+"#winHousehold":{
+	barColor: "#f7f7f7"
+}
+
+".container" : {
+	backgroundColor: "white",
+	layout: "vertical"
+}
+
+"Label":{
+	font:{
+		fontSize: 14
+	},
+	color: "#555",
+}
+
+".vInfoRow":{
+	layout: "horizontal",
+	height: Titanium.UI.SIZE,
+	left: 20,
+	top: 10
+}
+
+"#lblPhone":{
+	left: 30
+}
+
+"#lblStatus":{
+	left: 30
+}
+
+"#lblAddress":{
+	left: 20
+}
+
+"#lblSpecial":{
+	left: 10
+}
+
+"#lblHouseholdMembers":{
+	top: 20,
+	backgroundColor: "#f7f7f7",
+	font:{
+		fontSize: 16,
+	},
+	height: 50,
+	width: "100%",
+	color: "#555",
+	textAlign: "center"
+}
+
+".ctrMember":{
+	backgroundColor: "#f0dec8",
+	height: 45,
+	font:{
+		fontSize: 12
+	}
+}
+
+"#tvMembers":{
+	separatorColor: "transparent",
+	width: "87.5%",
+	top: 15,
+	height: Titanium.UI.SIZE,
+}
+
+"#tvMembers[formFactor=tablet]":{
+	width: "50%"
+}
+
+".lblPatientData":{
+	color: "#796857",
+	font:{
+		fontSize: 14
+	}
+}
+
+".lblMedicine":{
+	color: "#796857",
+	borderColor: "#fff5ec",
+	right: 0,
+	height: Titanium.UI.FILL,
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
+	width: 40,
+	font:{
+		fontSize: 16,
+		fontWeight: "bold"
+	}
+}
+
+".itemSeparator":{
+	height: 2,
+	width: Titanium.UI.FILL,
+	bottom: 0,
+	backgroundColor: "white"
+}
+
+"#ivCheck":{
+	height: 25,
+	width: 25,
+	left: 12
+}
+
+"#btnSave":{
+	backgroundColor: "#00c7eb",
+	color: 'white',
+	width: 150,
+	height: 45,
+	top: 20,
+	font: {
+		fontSize: 14
+	},
+}
+
+"#vSignature":{
+	top: 15,
+	width: 280,
+	height: 150,
+	borderColor: "#aaa",
+	borderWidth: 3
+}
+
+"#ivSignature":{
+	width: 280,
+	height: 150,
+}
+
+"#vFooterPadding":{
+	height: 40
+}

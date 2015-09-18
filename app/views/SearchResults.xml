@@ -1,0 +1,13 @@
+<Alloy>
+	<Window class="container" title="Search Results">
+		<Label id="lblNoResults">No results found</Label>
+		<TableView id="tvSearchResults" dataCollection="searchResults"  
+			onClick="tvSearchResults_onClick">
+			<TableViewRow class="ctrSearchResult">
+				<Label class="cName" text="{name}" />
+				<Label class="cPhone" text="{phone}" />
+				<Label class="cAddress" text="{address}" />
+			</TableViewRow>
+		</TableView>
+	</Window>
+</Alloy>

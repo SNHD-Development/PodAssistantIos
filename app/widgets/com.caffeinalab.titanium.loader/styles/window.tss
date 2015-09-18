@@ -1,0 +1,33 @@
+".cfn_LoaderMask": {
+	backgroundColor: "#6000",
+	backgroundImage: null,
+	opacity: 1.0,
+	modal: false,
+	fullscreen: false
+},
+".cfn_LoaderView":{
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	backgroundColor: '#D000',
+	borderRadius: 10
+},
+".cfn_LoaderViewInset": {
+	top: 20,
+	right: 40,
+	bottom: 20,
+	left: 40,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	layout: 'vertical'
+},
+".cfn_LoaderIndicator": {
+	style: Ti.UI.iPhone.ActivityIndicatorStyle.BIG,
+	color: '#fff'
+},
+".cfn_LoaderLabel": {
+	top: 20,
+	color: '#fff',
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+},
+".cfn_LoaderImages":{
+}

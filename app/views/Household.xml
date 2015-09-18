@@ -1,0 +1,37 @@
+<Alloy>
+	<Window id="winHousehold" title="Household Information">
+		<ScrollView class="container">
+			<View class="vInfoRow" top="20">
+				<Label>Status:</Label>
+				<Label id="lblStatus"></Label>
+			</View>
+			<View class="vInfoRow">
+				<Label>Phone:</Label>
+				<Label id="lblPhone"></Label>
+			</View>
+			<View class="vInfoRow">
+				<Label>Address:</Label>
+				<Label id="lblAddress"></Label>
+			</View>
+			<View class="vInfoRow">
+				<Label>Special Accommodations:</Label>
+				<Label id="lblSpecial"></Label>	
+			</View>
+			<Label id="lblHouseholdMembers">Household Members</Label>
+			<TableView id="tvMembers" dataCollection="houseMembers" onClick="tvMembers_onClick">
+				<TableViewRow class="ctrMember">
+					<ImageView id="ivCheck" image="{checkedImage}" />
+					<Label class="lblPatientData" text="{patientData}" />
+					<Label class="lblMedicine" text="{medicine}" />
+					<View class="itemSeparator"></View>
+				</TableViewRow>
+			</TableView>
+			<View id="vSignature" onClick="vSignature_onClick">
+				<ImageView id="ivSignature"></ImageView>
+				<Label id="lblGetSignature">Get Signature</Label>
+			</View>
+			<Button id="btnSave" title="SAVE" onClick="btnSave_onClick"></Button>
+			<View id="vFooterPadding"></View>
+		</ScrollView>
+	</Window>
+</Alloy>

@@ -1,0 +1,53 @@
+
+".container" : {
+	backgroundColor: 'white',
+	backgroundImage: '/images/p6.png',
+	backgroundRepeat: true	
+}
+
+"#tvSearchResults":{
+	height: Titanium.UI.SIZE,
+	top: 0
+}
+
+"Label":{
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	width: "90%"
+}
+
+".ctrSearchResult":{
+	height: 95,
+}
+
+".cName":{
+	top: 15,
+	color: "#00c7eb",
+	font:{
+		fontSize: 16,
+		fontWeight: "bold"
+	}
+}
+
+".cPhone":{
+	color: "#555",
+	top: 40,
+	font:{
+		fontSize: 13
+	}
+}
+
+".cAddress":{
+	color: "#555",
+	top: 60,
+	font:{
+		fontSize: 13
+	}
+}
+
+"#lblNoResults":{
+	width: "100%",
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
+	top: 40,
+	visible: false,
+	color: "#eb0048"
+}

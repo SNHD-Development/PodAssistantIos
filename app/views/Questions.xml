@@ -1,0 +1,20 @@
+<Alloy>
+	<Window id="winQ" title="Questionnaire">
+		<ScrollView class="container">
+			<Label class="cQ">Is current member on dialysis at this time?</Label>
+			<Label id="lblDialysis" class="cA">NO</Label>
+			<Label class="cQ">Does this person have seizure disorder or epilepsy?</Label>
+			<Label id="lblSeizure" class="cA">NO</Label>
+			<Label class="cQ">Is current member under 90 lbs or unable to take pills?</Label>
+			<Label id="lblUnderWeight" class="cA">NO</Label>
+			<Label class="cQ">Is current member ALLERGIC to Doxycycline or any “cycline” drug or pregnant or breast-feeding?</Label>
+			<Label id="lblAllergicCycline" class="cA">NO</Label>
+			<Label class="cQ">Is current member TAKING Digoxin or Methotrexate?</Label>
+			<Label id="lblTakingDigoxin" class="cA">NO</Label>
+			<Label class="cQ">Is current member ALLERGIC to: Ciprofloxacin or any “floxacin” drug or Cyclosporin?</Label>
+			<Label id="lblAllergicFloxacin" class="cA">NO</Label>
+			<Label class="cQ">Is current member TAKING Coumadin, Probenecid, Tizadine, Phenytoin, or Theophyline?</Label>
+			<Label id="lblTakingCoumadin" class="cA">NO</Label>
+		</ScrollView>
+	</Window>
+</Alloy>

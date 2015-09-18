@@ -1,0 +1,41 @@
+
+".container" : {
+	backgroundColor: "white"
+}
+
+".cLabel":{
+	font: {
+		fontSize: 12,
+		fontWeight: "bold"
+	},
+	color: "#555",
+	left: 30,
+	top: 10
+}
+
+"TextField":{
+	bubbleParent: false,
+	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+	height: 45,
+	width: 250,
+	left: 30,
+	editable: false
+}
+
+
+"#btnSave":{
+	backgroundColor: "#00c7eb",
+	color: 'white',
+	width: 150,
+	height: 45,
+	left: 30,
+	top: 20,
+	font: {
+		fontSize: 14
+	},
+}
+
+"#svMain":{
+	top: 5,
+	layout: "vertical"
+}

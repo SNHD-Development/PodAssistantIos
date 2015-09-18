@@ -1,6 +1,16 @@
 <Alloy>
-		<Window class="container">
-			<Button title="LOGOUT" class="btnLogout" onClick="btnLogout_onClick"></Button>
-			<Button title="Active QR Reader" class="btnQr" onClick="btnQr_onClick"></Button>
-		</Window>
+	<Window id="winSearch" class="container" onClick="winSearch_onClick">
+		<Label id="lblPodLocation">Pod Location</Label>
+		<View id="vGears" onClick="vGears_onClick">
+			<ImageView id="ivGears"></ImageView>	
+		</View>
+		<Button id="btnLogout" title="Logout" onClick="btnLogout_onClick"></Button>
+		<ScrollView id="vManualSearch">
+			<Button id="btnQr" title="Use QR Reader" onClick="btnQr_onClick"></Button>
+			<TextField id="txtFirstName" hintText="First Name" />
+			<TextField id="txtLastName" hintText="Last Name" />
+			<TextField id="txtPhoneNumber" hintText="Phone Number" />
+			<Button id="btnSearch" title="SEARCH" onClick="btnSearch_onClick"></Button>
+		</ScrollView>
+	</Window>	
 </Alloy>

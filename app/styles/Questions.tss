@@ -1,0 +1,27 @@
+
+".container" : {
+	backgroundColor: "white",
+	layout: "vertical"
+}
+
+".cQ":{
+	top: 20,
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	color: "#555",
+	width: "90%",
+	font:{
+		fontSize: 14
+	}
+}
+
+".cA":{
+	top: 1,
+	font:{
+		fontWeight: "bold",
+		fontSize: 15
+	},
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	color: "#5ba710",
+	width: "90%"
+}
+

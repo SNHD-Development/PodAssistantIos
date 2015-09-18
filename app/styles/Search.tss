@@ -3,22 +3,84 @@
   backgroundColor: 'white',
 }
 
-".btnLogout":{
-	backgroundColor: "#eb0048",
-	color: 'white',
-	width: 60,
+"TextField":{
+	top: 10,
+	bubbleParent: false,
+	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+	height: 45,
+	width: 250
+}
+
+"TextField[formFactor=tablet]":{
+	top: 15
+}
+
+"TextField[formFactor=tablet]":{
+	width: "50%"
+}
+
+"#btnLogout":{
+	width: 80,
+	bottom: 20,
+	zIndex: 2
+}
+
+"#btnQr":{
+	width: '100%',
+	height: 160,
+	backgroundColor: '#f0dec8',
+	color: "#796857",
 	font: {
-		fontSize: 10
+		fontSize: 15
 	},
-	right: 0,
+}
+
+"#vManualSearch":{
+	layout: "vertical"
+}
+
+"#btnSearch":{
+	backgroundColor: "#00c7eb",
+	color: 'white',
+	width: 150,
+	height: 45,
+	top: 20,
+	font: {
+		fontSize: 14
+	},
+}
+
+"#txtFirstName":{
 	top: 20
 }
 
-".btnQr":{
-	width: 200,
-	height: 200,
-	top: 10,
-	backgroundColor: '#eee',
-	color: "#aaa"
+"#txtFirstName[formFactor=tablet]":{
+	top: 30
+}
+
+
+"#lblPodLocation":{
+	top: 30,
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
+	width: "100%",
+	color: "#555",
+	font:{
+		fontSize: 18,
+		fontWeight: "bold"
+	}
+}
+
+"#ivGears":{
+	image: "/images/gears.png",
+	height: 30,
+	width: 30,
+	right: 20
+}
+
+"#vGears":{
+	top: 25,
+	right: 0,
+	width: 65,
+	height: Ti.UI.SIZE
 }
 

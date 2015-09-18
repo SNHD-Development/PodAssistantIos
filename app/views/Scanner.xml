@@ -1,0 +1,7 @@
+<Alloy>
+	<Window class="container">
+		<Button id="btnClose" title="Close" onClick="btnClose_onClose"></Button>
+		<Label>Toggle Light</Label>
+		<Switch id="sLight" onChange="sLight_onChange"/>
+	</Window>
+</Alloy>

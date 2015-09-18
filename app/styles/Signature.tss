@@ -1,0 +1,30 @@
+
+".container" : {
+	backgroundColor: "white"
+}
+
+"#winSignature":{
+	orientation: Titanium.UI.LANDSCAPE_LEFT
+}
+
+"#vCommands":{
+	layout: "horizontal",
+	top: 20,
+	width: Titanium.UI.SIZE,
+	height: Ti.UI.SIZE,
+}
+
+"#vCommands[formFactor=tablet]":{
+	top: 40
+}
+
+"Button":{
+	backgroundColor: "#00c7eb",
+	color: 'white',
+	width: 100,
+	height: 45,
+	left: 10,
+	font: {
+		fontSize: 14
+	},
+}

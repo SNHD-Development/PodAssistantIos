@@ -1,0 +1,23 @@
+<Alloy>
+	<Window id="winMedicine" class="container" title="Medicine" onClick="winMedicine_onClick">
+		<ScrollView id="vItems">
+			<Label class="cLabel">Medicine:</Label>
+			<TextField id="txtType" hintText="Type" onClick="txtType_onClick" onFocus="txtType_onFocus" />
+			<Label class="cLabel">Lot:</Label>
+			<TextField id="txtLot" hintText="Lot #" />
+			<Label class="cLabel">Comment:</Label>
+			<TextArea id="taComment" />
+			<View id="vPickedUp">
+				<Label>Picked up</Label>
+				<TabbedBar id="tbPickedUp">
+		            <Labels>
+		                <Label>Yes</Label>
+		                <Label>No</Label>
+		            </Labels>
+		        </TabbedBar>
+			</View>
+			<Button id="btnQ" title="View Questionaire" onClick="btnQ_onClick"></Button>
+			<Button id="btnSave" title="SAVE" onClick="btnSave_onClick"></Button>
+		</ScrollView>
+	</Window>
+</Alloy>

@@ -1,0 +1,11 @@
+<Alloy>
+	<Window id="winOptions" class="container" title="Options" onClick="winOptions_onClick">
+		<ScrollView id="svMain">
+			<Label class="cLabel">Default Doxycycline lot number:</Label>
+			<TextField id="txtDoxyLot" hintText="Lot #" onClick="txtDoxyLot_onClick"/>
+			<Label class="cLabel">Default Ciprofloxacin lot number:</Label>
+			<TextField id="txtCiproLot" hintText="Lot #" onClick="txtCiproLot_onClick"/>
+			<Button id="btnSave" title="SAVE" onClick="btnSave_onClick"></Button>	
+		</ScrollView>
+	</Window>
+</Alloy>

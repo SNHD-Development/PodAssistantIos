@@ -1,0 +1,29 @@
+
+".container" : {
+  navBarHidden: true,
+	exitOnClose : false,
+	backgroundColor : 'black',
+	width : '100%',
+	height : '100%',
+}
+
+"Button":{
+	backgroundColor: "#eb0048",
+	color: 'white',
+	height: 45,
+	bottom: 0,
+	left: 0,
+	width: 60
+}
+
+"Switch":{
+	value : false,
+	bottom : 10,
+	right : 10,
+}
+
+"Label":{
+	bottom: 15,
+	right: 70,
+	color: "white",
+}

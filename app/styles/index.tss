@@ -1,5 +1,6 @@
 ".container": {
-	backgroundColor:"#fcf4eb"
+	backgroundColor:"white",
+	layout: 'vertical'
 }
 
 "Label": {
@@ -8,35 +9,66 @@
 	color: "#000"
 }
 
-"Button":{
-	backgroundColor: "#00c7eb",
-	color: 'white',
-	width: 150,
-	font: {
-		fontSize: 12
-	},
-}
-
 "TextField":{
 	backgroundColor:'white',
-	width: 200,
+	width: 250,
 	font: {
-		fontSize: 12
+		fontSize: 13
 	},
-	height: 30,
+	height: 45,
+	bubbleParent: false,
 	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED
 }
 
-"#label": {
-	font: {
-		fontSize: 12
-	}
-}
 
 ".appTitle":{
 	top: 110,
+	color: "#555",
 	font: {
-		fontSize: 20,
-		fontFamily: 'Trebuchet MS'
+		fontSize: 28,
+		fontFamily: 'Trebuchet MS',
+		fontWeight: "bold"
 	},
+}
+
+"#btnLogin":{
+	backgroundColor: "#00c7eb",
+	color: 'white',
+	width: 150,
+	height: 45,
+	top: 20,
+	font: {
+		fontSize: 14
+	},
+}
+
+"#ivFooter":{
+	image: "/images/skyline.png",
+	bottom: 0,
+	width: "100%",
+}
+
+"#lblAuthResult":{
+	opacity: 0,
+	top: 20,
+	color: "#888",
+	font:{
+		fontSize: 13
+	}
+}
+
+"#ivSnhdLogo":{
+	image: "/images/snhd_logo_blue.png",
+	height: 67,
+	width: 120,
+	zIndex: 2,
+	bottom: 115
+}
+
+"#ivSnhdLogo[formFactor=tablet]":{
+	bottom: 220
+}
+
+"#winIndex":{
+	opacity: 0
 }

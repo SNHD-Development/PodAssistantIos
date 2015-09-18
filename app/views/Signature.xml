@@ -1,0 +1,10 @@
+<Alloy>
+	<Window id="winSignature" class="container">
+		<Widget id="sigCapture" src="sp.signature" />
+			<View id="vCommands">
+				<Button id="btnBack" title="BACK" onClick="btnBack_onClick"></Button>
+				<Button id="btnSave" title="SAVE" onClick="btnSave_onClick"></Button>
+				<Button id="btnClear" title="CLEAR" onClick="btnClear_onClick"></Button>	
+			</View>
+	</Window>
+</Alloy>	

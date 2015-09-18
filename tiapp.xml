@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
     <id>org.cchd.podapp</id>
-    <name>podaspp</name>
-    <version>1.0</version>
-    <publisher>Tharindu</publisher>
-    <url>http://</url>
-    <description>undefined</description>
-    <copyright>2015 by Tharindu</copyright>
+    <name>POD Assistant</name>
+    <version>1.02</version>
+    <publisher>Southern Nevada Health District</publisher>
+    <url>https://southernnevadahealthdistrict.org/</url>
+    <description>This app is to be used by personnel at POD (Pont of Dispensing) sites to dispense medicine. A POD is a location where you can go to get medications or vaccines during a public health emergency.</description>
+    <copyright>2015 by Southern Nevada Health District</copyright>
     <icon>appicon.png</icon>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
@@ -47,7 +47,11 @@
         </splash>
         <theme>default</theme>
     </mobileweb>
-    <modules/>
+    <modules>
+        <module platform="iphone">com.acktie.mobile.ios.qr</module>
+        <module platform="iphone">analytics.google</module>
+        <module platform="iphone" version="1.2.0">ti.imagefactory</module>
+    </modules>
     <deployment-targets>
         <target device="android">false</target>
         <target device="ipad">true</target>

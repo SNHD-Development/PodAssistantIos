@@ -1,0 +1,78 @@
+
+".container" : {
+	backgroundColor: "white",
+}
+
+"TextField":{
+	bubbleParent: false,
+	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+	height: 45,
+	width: 280,
+	left: 20
+}
+
+"#btnQ":{
+	left: 20,
+	top: 20,
+}
+
+"#btnSave":{
+	backgroundColor: "#00c7eb",
+	color: 'white',
+	width: 150,
+	height: 45,
+	left: 20,
+	top: 20,
+	font: {
+		fontSize: 14
+	},
+}
+
+"#vPickedUp":{
+	top: 15,
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.SIZE,
+	layout: "horizontal",
+	left: 20
+}
+
+"#txtType":{
+	bubbleParent: false,
+	editable: false	
+}
+
+"#vItems":{
+	top: 5,
+	layout: "vertical"
+}
+
+"#taComment":{
+	width: 280,
+	left: 20,
+	height: 150,
+	borderWidth: 1,
+	borderColor: '#eee',
+	borderRadius: 5,
+	returnKeyType: Titanium.UI.RETURNKEY_DONE,
+	font: {
+		fontSize: 17
+	},
+}
+
+"#tbPickedUp":{
+	left: 20,
+	height: 30,
+	width: 100,
+	backgroundColor: "#d1c1ae"
+}
+
+".cLabel":{
+	font: {
+		fontSize: 12,
+		fontWeight: "bold"
+	},
+	color: "#555",
+	left: 20,
+	top: 10
+}
+
