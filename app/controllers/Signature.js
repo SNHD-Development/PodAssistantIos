@@ -1,9 +1,12 @@
 var args = arguments[0] || {};
 
-Titanium.App.addEventListener("app:signature:capture", function(e){
+Titanium.App.addEventListener("app:signature:capture", cbSignatureCaptured);
+
+function cbSignatureCaptured(e){
+	Titanium.App.removeEventListener("app:signature:capture", cbSignatureCaptured);
 	$.winSignature.close();
 	args.onSave(e);
-});
+}
 
 function btnBack_onClick(){
 	$.winSignature.close();

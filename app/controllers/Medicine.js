@@ -20,13 +20,11 @@ function btnSave_onClick(){
 		Alloy.Globals.Tracker.trackEvent({
 		    category: "UserActions",
 		    action: "Changed lot number",
-		    value: args.medicine.MemberName_fullname_first_name + " " + args.medicine.MemberName_fullname_last_name
+		    label: args.medicine.MemberName_fullname_first_name + " " + args.medicine.MemberName_fullname_last_name
 		});
 	}
 	args.medicine.LotNumber = $.txtLot.value.trim();
-	if ($.taComment.value != ""){
-		args.medicine.Comment = $.taComment.value;
-	}
+	args.medicine.Comment = $.taComment.value;
 	args.medicine.PickedUp = $.tbPickedUp.index == 0 ? true : false;
 	if (args.medicine.PickedUp == false){
 		args.medicine.PickedUpLocation = "";
@@ -43,6 +41,18 @@ function picker_onDone(e){
   		return;
   	var value = e.data[0].value;
   	$.txtType.setValue(value);
+  	switch (value){
+  		case "Doxycycline":
+  			$.txtLot.value = Alloy.Globals.DefaultDoxyLotNum;
+  			break;
+  		case "Ciprofloxacin":
+  			$.txtLot.value = Alloy.Globals.DefaultCiproLotNum;
+  			break;
+  		case "Medical":
+  			break;
+  		default:
+  			break;
+  	}
 }
 
 function txtType_onClick(){

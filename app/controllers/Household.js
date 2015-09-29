@@ -137,6 +137,7 @@ function setStatusLabel(status){
 }
 
 function init(){
+	Alloy.Globals.OldSignatureId = "";
 	setStatusLabel($.msForm.Status);
 	$.lblPhone.text = $.msForm.Fields.YourPhone;
 	var addr = $.msForm.Fields.YourAddress_address_street + "\n" +

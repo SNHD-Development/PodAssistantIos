@@ -248,6 +248,7 @@ function saveFormContent(form, cb){
 	};
 	xhr.onerror = function(e){
 		var err = "Error in saveFormContent. Status Code: " + this.status + ", " + e.code + e.error;
+		console.log(err);
 		Alloy.Globals.Tracker.trackException({
 		    description: err,
 		    fatal: false
@@ -276,6 +277,7 @@ exports.saveForm = function(form, cb){
 			    description: err,
 			    fatal: false
 			});
+			console.log(err);
 			cb(true);
 		}else{
 			if (Alloy.Globals.OldSignatureId != ""){
