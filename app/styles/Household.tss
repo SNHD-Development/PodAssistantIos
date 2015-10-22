@@ -1,5 +1,10 @@
 "#winHousehold":{
-	barColor: "#f7f7f7"
+	barColor: "#f7f7f7",
+}
+
+"#svMain":{
+	layout: "vertical",
+	backgroundColor: "white"
 }
 
 ".container" : {
@@ -54,7 +59,8 @@
 	height: 45,
 	font:{
 		fontSize: 12
-	}
+	},
+	selectionStyle: Titanium.UI.iPhone.TableViewCellSelectionStyle.GRAY
 }
 
 "#tvMembers":{
@@ -69,10 +75,11 @@
 }
 
 ".lblPatientData":{
+	height: Titanium.UI.FILL,
 	color: "#796857",
 	font:{
 		fontSize: 14
-	}
+	},
 }
 
 ".lblMedicine":{
@@ -81,7 +88,7 @@
 	right: 0,
 	height: Titanium.UI.FILL,
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
-	width: 40,
+	width: 45,
 	font:{
 		fontSize: 16,
 		fontWeight: "bold"
@@ -95,16 +102,23 @@
 	backgroundColor: "white"
 }
 
-"#ivCheck":{
-	height: 25,
-	width: 25,
-	left: 12
+".ivCheck":{
+	height: 30,
+	width: 30,
+	left: 8,
 }
 
-"#btnSave":{
-	backgroundColor: "#00c7eb",
+".vCheckContainer":{
+	width: 46,
+	left: 0,
+	height: Ti.UI.FILL,
+	borderColor: "white"
+}
+
+"#btnBack":{
+	backgroundColor: "#bbb",
 	color: 'white',
-	width: 150,
+	width: 100,
 	height: 45,
 	top: 20,
 	font: {
@@ -112,12 +126,32 @@
 	},
 }
 
+
+"#btnComplete":{
+	backgroundColor: "#00c7eb",
+	color: 'white',
+	width: 150,
+	height: 45,
+	top: 20,
+	left: 10,
+	font: {
+		fontSize: 14
+	},
+}
+
+"#lblGetSignature":{
+	font:{
+		fontSize: 16
+	}
+}
+
 "#vSignature":{
 	top: 15,
 	width: 280,
 	height: 150,
-	borderColor: "#aaa",
-	borderWidth: 3
+	borderColor: "#ddd",
+	borderWidth: 3,
+	backgroundColor: "#ddd",
 }
 
 "#ivSignature":{
@@ -128,3 +162,11 @@
 "#vFooterPadding":{
 	height: 40
 }
+
+"#vActions":{
+	layout: "horizontal",
+	height: Titanium.UI.SIZE,
+	width: Titanium.UI.SIZE,
+}
+
+

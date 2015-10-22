@@ -24,3 +24,9 @@ overrode the settings with other TSS, XML, or JS settings:
 }
 
 */
+
+"Window":{
+	titleAttributes:{
+		color: "#555"
+	}
+}

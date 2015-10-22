@@ -24,12 +24,12 @@ function cancel() {
 function success(data) {
 	if (data != undefined && data.data != undefined) {
 		Titanium.Media.vibrate();
-		qrCodeView.stop();
-		$.Scanner.close();
 		args.onScannerResult(null, data.data);
 	}else{
 		args.onScannerResult(true);
 	}
+	qrCodeView.stop();
+	$.Scanner.close();
 };
 
 function init(){

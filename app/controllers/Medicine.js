@@ -15,7 +15,24 @@ function removeKeyboard(){
 	$.taComment.blur();
 }
 
+function isAllowedToSave(){
+	if ($.txtType.value == "Medical"){
+		alert ("Medical is not a valid pick up type");
+		return false; 
+	}
+	
+	if ($.txtType.value == "Other" && $.taComment.value.trim() == ""){
+		alert ("A comment is required for \"Other\" medicine type.");
+		return false; 
+	}
+	return true;
+}
+
+
 function btnSave_onClick(){
+	if (!isAllowedToSave()){
+		return;
+	}
 	if (args.medicine.LotNumber != $.txtLot.value.trim()){
 		Alloy.Globals.Tracker.trackEvent({
 		    category: "UserActions",
@@ -33,6 +50,7 @@ function btnSave_onClick(){
 	}
 	args.medicine.Medicine = util.getMedicineShortName($.txtType.value);
 	$.cbMedicineSaved();
+	Alloy.Globals.PendingChanges = true;
 	$.winMedicine.close();
 }
 
@@ -80,7 +98,7 @@ function setupPicker(){
 	  hideNavBar: false,
 	  type: 'single-column',
 	  selectedValues: [args.medicine.Medicine.toUpperCase()],
-	  pickerValues: [{"C": "Ciprofloxacin", "D": "Doxycycline", "M": "Medical"}],
+	  pickerValues: [{"C": "Ciprofloxacin", "D": "Doxycycline", "M": "Medical", "O": "Other"}],
 	  onDone: picker_onDone
 	});
 }

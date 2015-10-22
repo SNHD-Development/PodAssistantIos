@@ -17,6 +17,8 @@
 	},
 	height: 45,
 	bubbleParent: false,
+	autocapitalization: false,
+	autocorrect: false,
 	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED
 }
 

@@ -21,7 +21,6 @@
 		fontSize: 15
 	},
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
-	color: "#5ba710",
 	width: "90%"
 }
 

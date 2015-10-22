@@ -5,6 +5,8 @@ Titanium.App.addEventListener("app:signature:capture", cbSignatureCaptured);
 function cbSignatureCaptured(e){
 	Titanium.App.removeEventListener("app:signature:capture", cbSignatureCaptured);
 	$.winSignature.close();
+	Alloy.Globals.SignatureCaptured = true;
+	Alloy.Globals.PendingChanges = true;
 	args.onSave(e);
 }
 

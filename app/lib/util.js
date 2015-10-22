@@ -7,6 +7,8 @@ exports.getMedicineLongName = function(d){
 			return "Ciprofloxacin";
 		case "M":
 			return "Medical";
+		case "O":
+			return "Other";
 	}
 };
 
@@ -18,6 +20,8 @@ exports.getMedicineShortName = function(d){
 			return "C";
 		case "Medical":
 			return "M";
+		case "Other":
+			return "O";
 	}
 };
 

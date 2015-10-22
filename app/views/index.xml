@@ -2,7 +2,7 @@
 	<NavigationWindow id="nwMain">
 		<Window id="winIndex" class="container" onClick="winIndex_onClick">
 			<Label class="appTitle">POD ASSISTANT</Label>
-			<TextField id="txtUsername" hintText="Username" top="20" />
+			<TextField id="txtUsername" hintText="POD Location Code" onChange="txtUsername_onChange" top="20" />
 			<TextField id="txtPassword" hintText="Password" passwordMask="true" top="10" />
 			<Button id="btnLogin" title="LOGIN" onClick="btnLogin_onClick"></Button>
 			<Label id="lblAuthResult"></Label>

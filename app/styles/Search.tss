@@ -31,7 +31,7 @@
 	backgroundColor: '#f0dec8',
 	color: "#796857",
 	font: {
-		fontSize: 15
+		fontSize: 16
 	},
 }
 

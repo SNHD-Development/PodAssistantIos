@@ -1,14 +1,42 @@
 var util = require ("util");
 var mockData = require("mockdata");
+var privateConfig = require("privateconfig");
 var async = require('async');
 
 function getAuthHeader(){
-	var username = "SnhdPodAssistantUser";
-	var password = "09MJL54Yav8jnBD";
+	var username = privateConfig.getData().Username;
+	var password = privateConfig.getData().Password;
 	var credentials = username + ':' + password;
 	var authHeaderValue = 'Basic ' + Ti.Utils.base64encode(credentials);
 	return authHeaderValue;
 }
+
+exports.getFormSchema = function(cb){
+	var xhr = Ti.Network.createHTTPClient();
+	var url = Alloy.CFG.ApiBaseUri + "FormSchema?name=PODMedicalScreeningForm";
+	xhr.open("GET",  Alloy.CFG.ApiBaseUri + "FormSchema?name=PODMedicalScreeningForm");
+	xhr.setRequestHeader('Authorization', getAuthHeader());
+	xhr.onload = function() {
+		if (this.responseText){
+			Alloy.Globals.FormSchema = JSON.parse(JSON.parse(this.responseText));
+		}
+		if (cb){
+			cb();
+		}
+	};
+	xhr.onerror = function(e){
+		var err = "Error in getFormSchema. Status Code: " + this.status + ', ' + e.code + e.error;
+		console.log(err);
+		Alloy.Globals.Tracker.trackException({
+		    description: err,
+		    fatal: false
+		});
+		if (cb!=null){
+			cb();
+		}
+	};
+	xhr.send();
+};
 
 exports.getDefaultLotNumbers = function(){
 	Alloy.Globals.DefaultDoxyLotNum = "";
@@ -23,8 +51,8 @@ exports.getDefaultLotNumbers = function(){
 	xhr.open("GET", Alloy.CFG.ApiBaseUri + "PodAssistant/DefaultLotNumbers?podLocation=" + Alloy.Globals.PodLocation);
 	xhr.setRequestHeader('Authorization', getAuthHeader());
 	xhr.onload = function() {
-		var res = JSON.parse(this.responseText);
-		if (res){
+		if (this.responseText){
+			var res = JSON.parse(this.responseText);
 			Alloy.Globals.DefaultDoxyLotNum = res.DefaultDoxyLotNum;
 			Alloy.Globals.DefaultCiproLotNum = res.DefaultCiproLotNum;
 		}
@@ -50,7 +78,12 @@ exports.getLotNumbers = function(cb){
 	xhr.open("GET", Alloy.CFG.ApiBaseUri + "PodAssistant/LotNumbers?podLocation=" + Alloy.Globals.PodLocation);
 	xhr.setRequestHeader('Authorization', getAuthHeader());
 	xhr.onload = function() {
-		cb(null, JSON.parse(this.responseText));
+		if (this.responseText){
+			cb(null, JSON.parse(this.responseText));	
+		}else{
+			cb(true, null);
+		}
+		
 	};
 	xhr.onerror = function(e){
 		var err = "Error in getLotNumbers. Status Code: " + this.status + ', ' + e.code + e.error;

@@ -37,6 +37,7 @@ function cbFormLookupResult(err, d){
 }
 
 function cbSearchResults(err, searchResults){
+	$.btnSearch.enabled = true;
 	Alloy.Globals.Loader.hide();
 	if (err || searchResults == null){
 		$.toast = Alloy.createWidget('net.beyondlink.toast');
@@ -48,6 +49,9 @@ function cbSearchResults(err, searchResults){
 		searchResults: searchResults
 	}).getView();
 	Alloy.Globals.nwMain.openWindow(view);
+	$.txtFirstName.value = "";
+	$.txtLastName.value = "";
+	$.txtPhoneNumber.value = "";
 }
 
 function vGears_onClick(){
@@ -58,17 +62,22 @@ function vGears_onClick(){
 }
 
 function btnSearch_onClick(){
+	$.btnSearch.enabled = false;
 	var firstName = $.txtFirstName.value.trim();
 	var lastName = $.txtLastName.value.trim();
 	var phoneNumber = $.txtPhoneNumber.value.trim();
+	
+	if ((Ti.App.deployType == "test" || Ti.App.deployType == "development") &&
+		(!firstName && !lastName)){
+		firstName = "Fred";
+		lastName = "Jones";
+	}
+	
 	if (!phoneNumber && (!firstName || !lastName)){
 		alert ("Please enter both first name and last name to search");
 		return;
 	}
-	// if (!firstName || !lastName){
-		// firstName = "Mike";
-		// lastName = "Jones";
-	// }
+
 	Alloy.Globals.Loader.show();
 	serviceAgent.getSearchResults(firstName,lastName,phoneNumber,cbSearchResults);
 }
@@ -83,10 +92,8 @@ function winSearch_onClick(){
 function init(){
 	$.btnQr.height = Ti.Platform.displayCaps.platformHeight / 3;
 	$.vManualSearch.top = 60;
-	//$.vManualSearch.top = $.btnQr.top + $.btnQr.height;
 	$.winSearch.hideNavBar();
 	if (Alloy.Globals.isiOS4){
-		console.log('mw');
 		$.btnLogout.left = 0;
 		$.btnLogout.bottom = 30;
 	}

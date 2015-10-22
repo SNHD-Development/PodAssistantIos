@@ -43,7 +43,6 @@ function setupDoxyPicker(){
 		return;
 	}
 	$.txtDoxyLot.blur();
-	var currentDoxyLot = 
 	Alloy.createWidget('danielhanold.pickerWidget', {
 	  id: 'mySingleColumn',
 	  outerView: $.winOptions,
@@ -85,7 +84,9 @@ function btnSave_onClick(){
 }
 
 function cbLotNumbersReceived(err, lotNumbers){
-	if (err){
+	if (err || !lotNumbers){
+		$.txtDoxyLot.editable = true;
+		$.txtCiproLot.editable = true; 
 		return;
 	}
 	$.lotNumbers = lotNumbers;

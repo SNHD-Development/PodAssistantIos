@@ -1,9 +1,15 @@
 var serviceAgent = require('serviceAgent');
 var animation = require('alloy/animation');
 var async = require('async');
+var privateConfig = require("privateconfig");
 
 function btnLogin_onClick(){
 	Alloy.Globals.Loader.show();
+	if (($.txtUsername.value == "" && $.txtPassword.value == "") &&
+		(Ti.App.deployType == "test" || Ti.App.deployType == "development")){
+		$.txtUsername.value = privateConfig.getData().PodLocation;
+		$.txtPassword.value = privateConfig.getData().PodLocationPassword;
+	}
 	serviceAgent.authenticate($.txtUsername.value, $.txtPassword.value, cbAuth);
 }
 
@@ -19,6 +25,7 @@ function cbAuth(err, success){
 		});
 	}else{
 		serviceAgent.getDefaultLotNumbers();
+		serviceAgent.getFormSchema();
 		animation.fadeOut($.lblAuthResult, 1);
 		var view = Alloy.createController('Search',{}).getView();
 		Alloy.Globals.nwMain.openWindow(view);
@@ -34,6 +41,10 @@ function winIndex_onClick(){
 	$.txtPassword.blur();
 }
 
+function txtUsername_onChange(){
+	$.txtUsername.value = $.txtUsername.value.toUpperCase();
+}
+
 function init(){
 	animation.fadeIn($.winIndex, 2000);
 	Alloy.Globals.nwMain = $.nwMain;
@@ -42,7 +53,7 @@ function init(){
 	    screenName: "Login"
 	});
 }
-
+console.log('console output works');
 init();
 
 $.nwMain.open();
