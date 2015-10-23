@@ -2,11 +2,21 @@ var util = require ("util");
 var mockData = require("mockdata");
 var async = require('async');
 
-if (!Alloy.CFG.MockDataMode){
-	var privateConfig = require("privateconfig");	
+var privateConfig;
+
+try{
+	privateConfig = require("privateconfig");
+}catch(e){
 }
 
 function getAuthHeader(){
+	if (privateConfig){
+		var username = privateConfig.getData().Username;
+		var password = privateConfig.getData().Password;	
+	}else{
+		var username = "username";
+		var password = "password";
+	}
 	var username = privateConfig.getData().Username;
 	var password = privateConfig.getData().Password;
 	var credentials = username + ':' + password;

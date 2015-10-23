@@ -1,14 +1,21 @@
 var serviceAgent = require('serviceAgent');
 var animation = require('alloy/animation');
 var async = require('async');
-var privateConfig = require("privateconfig");
+var privateConfig;
 
+try{
+	privateConfig = require("privateconfig");
+}catch(e){
+}
+ 
 function btnLogin_onClick(){
 	Alloy.Globals.Loader.show();
 	if (($.txtUsername.value == "" && $.txtPassword.value == "") &&
 		(Ti.App.deployType == "test" || Ti.App.deployType == "development")){
-		$.txtUsername.value = privateConfig.getData().PodLocation;
-		$.txtPassword.value = privateConfig.getData().PodLocationPassword;
+		if (privateConfig){
+			$.txtUsername.value = privateConfig.getData().PodLocation;
+			$.txtPassword.value = privateConfig.getData().PodLocationPassword;	
+		}
 	}
 	serviceAgent.authenticate($.txtUsername.value, $.txtPassword.value, cbAuth);
 }
