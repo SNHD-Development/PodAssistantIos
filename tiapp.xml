@@ -2,7 +2,7 @@
 <ti:app xmlns:ti="http://ti.appcelerator.org">
     <id>org.cchd.podapp</id>
     <name>POD Assistant</name>
-    <version>1.04</version>
+    <version>1.05</version>
     <publisher>Southern Nevada Health District</publisher>
     <url>https://southernnevadahealthdistrict.org/</url>
     <description>This app is to be used by personnel at POD (Point of Dispensing) sites to dispense medicine. A POD is a location where you can go to get medications or vaccines during a public health emergency.</description>
