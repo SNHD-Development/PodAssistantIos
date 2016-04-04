@@ -4,6 +4,9 @@ var util = require ("util");
 var args = arguments[0] || {};
 
 $.cbMedicineSaved = args.cbMedicineSaved;
+$.msForm = args.msForm;
+$.toast = Alloy.createWidget('net.beyondlink.toast');
+$.winMedicine.add($.toast.getView());
 
 function winMedicine_onClick(){
 	removeKeyboard();
@@ -28,7 +31,6 @@ function isAllowedToSave(){
 	return true;
 }
 
-
 function btnSave_onClick(){
 	if (!isAllowedToSave()){
 		return;
@@ -43,15 +45,31 @@ function btnSave_onClick(){
 	args.medicine.LotNumber = $.txtLot.value.trim();
 	args.medicine.Comment = $.taComment.value;
 	args.medicine.PickedUp = $.tbPickedUp.index == 0 ? true : false;
-	if (args.medicine.PickedUp == false){
-		args.medicine.PickedUpLocation = "";
-	}else{
+	if (args.medicine.PickedUp){
 		args.medicine.PickedUpLocation = Alloy.Globals.PodLocation;
 	}
 	args.medicine.Medicine = util.getMedicineShortName($.txtType.value);
-	$.cbMedicineSaved();
+	Alloy.Globals.Loader.show();
 	Alloy.Globals.PendingChanges = true;
-	$.winMedicine.close();
+	serviceAgent.saveForm($.msForm, cbFormSaved);
+}
+
+function cbFormSaved(err){
+	Alloy.Globals.Loader.hide();
+	if (err){
+		$.toast.error("Error in saving");
+		return;
+	}
+	Alloy.Globals.PendingChanges = false;
+	$.toast.success("Saved successfully!");
+	Alloy.Globals.Tracker.trackEvent({
+	    category: "UserActions",
+	    action: "Save successful"
+	});
+	setTimeout(function(){
+		$.cbMedicineSaved();
+		$.winMedicine.close();
+	}, 2000);
 }
 
 function picker_onDone(e){

@@ -9,6 +9,12 @@
                 <Option>No</Option>
             </Options>
         </OptionDialog>
+		<OptionDialog id="odSaveNoSignature" title="Signature not captured. Save?" onClick="odSaveNoSignature_onClick">
+            <Options>
+                <Option>Yes</Option>
+                <Option>No</Option>
+            </Options>
+        </OptionDialog>
 		<ScrollView id="svMain">
 			<View class="vInfoRow" top="20">
 				<Label>Status:</Label>
@@ -34,7 +40,7 @@
 					</View>
 					<Label class="lblPatientData" text="{patientData}" 
 						onTouchstart="row_onTouchStart" onTouchend="row_onTouchEnd" />
-					<Label class="lblMedicine" text="{medicine}" onClick="lblMedicine_onClick" 
+					<Label class="lblMedicine" text="{medicine}" 
 						onTouchstart="row_onTouchStart" onTouchend="row_onTouchEnd"/>
 					<View class="itemSeparator"></View>
 				</TableViewRow>

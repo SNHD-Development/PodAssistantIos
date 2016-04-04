@@ -8,14 +8,21 @@ $.toast = Alloy.createWidget('net.beyondlink.toast');
 $.winHousehold.add($.toast.getView());
 var houseMembers = Alloy.Collections.houseMembers; 
 
-function setlblSpecialColor(needSpecialAssistance){
-	needSpecialAssistance = needSpecialAssistance.toLowerCase();
-	if (needSpecialAssistance == "false"){
-		$.lblSpecial.color = "#5ba710";
-		$.lblSpecial.text = "No";
-	}else{
+function setlblSpecialColor(needAssistance){
+	if (typeof(needAssistance)=="string" && needAssistance.toLowerCase() == "true")
+		needAssistance = true;
+	else if (typeof(needAssistance)=="string" && needAssistance.toLowerCase() == "false")
+		needAssistance = false;
+		
+	if (needAssistance){
 		$.lblSpecial.color = "#e52f0c";
 		$.lblSpecial.text = "Yes";
+	} else if (!needAssistance){
+		$.lblSpecial.color = "#5ba710";
+		$.lblSpecial.text = "No";
+	} else{
+		$.lblSpecial.color = "#e52f0c";
+		$.lblSpecial.text = "Unknown";
 	}
 }
 
@@ -48,25 +55,17 @@ function row_onTouchEnd(e){
 	});
 }
 
-function lblMedicine_onClick(e){
-	e.cancelBubble = true;
-	var view = Alloy.createController('Questions',{
-		data: $.msForm.Fields.HouseHoldMembers[e.index]
-	}).getView();
-	Alloy.Globals.nwMain.openWindow(view);
-}
-
 function tvMembers_onClick(e){
 	var m = $.msForm.Fields.HouseHoldMembers[e.index];
 	var view = Alloy.createController('Medicine',{
 		medicine: m,
-		cbMedicineSaved : cbMedicineSaved
+		cbMedicineSaved : cbMedicineSaved,
+		msForm: $.msForm
 	}).getView();
 	Alloy.Globals.nwMain.openWindow(view);
 }
 
 function cbMedicineSaved(){
-	$.toast.info ("You have pending changes to save");
 	refreshMembersTable();
 }
 
@@ -97,10 +96,6 @@ function isSignatureCaptured(){
 }
 
 function isAllowedToSave(){
-	if (!isSignatureCaptured()){
-		alert ("Need a signature before saving.");
-		return false;
-	}
 	if (medicalPickUpEnabled()){
 		alert ("M - Medical, is not a valid pick up type");
 		return false;
@@ -108,17 +103,36 @@ function isAllowedToSave(){
 	return true;
 }
 
-function btnComplete_onClick(){
-	if (!isAllowedToSave()){
-		return;
-	}
+function saveChanges(){
 	Alloy.Globals.Tracker.trackEvent({
 	    category: "UserActions",
 	    action: "Save Clicked"
 	});
+	setPickedUpLocation();
 	Alloy.Globals.Loader.show();
 	$.msForm.Status = getSaveFormStatus();
 	serviceAgent.saveForm($.msForm, cbFormSaved);
+}
+
+function setPickedUpLocation(){
+	$.msForm["Fields"]["HouseHoldMembers"].forEach(function(e){
+		if (e.PickedUp){
+			e.PickedUpLocation = Alloy.Globals.PodLocation;	
+		}else{
+			e.PickedUpLocation = '';
+		}	
+	});	
+}
+
+function btnComplete_onClick(){
+	if (!isAllowedToSave()){
+		return;
+	}
+	if (!isSignatureCaptured()){
+		$.odSaveNoSignature.show();		
+		return;
+	}
+	saveChanges();
 }
 
 function medicalPickUpEnabled(){
@@ -189,12 +203,9 @@ function setDefaultPickup(){
 		if (e.PickedUp == null){
 			e.PickedUp = false;	
 		}
-		if (e.PickedUpLocation == null){
-			e.PickedUpLocation = Alloy.Globals.PodLocation;	
-		}
-		if (e.LotNumber != null)
+		if (e.LotNumber != null && e.LotNumber != ''){
 			return;
-		
+		}
 		switch (e.Medicine){
 			case "D":
 				e.LotNumber = Alloy.Globals.DefaultDoxyLotNum;
@@ -229,6 +240,12 @@ function odSave_onClick(e){
 		btnComplete_onClick();
 	}else{
 		$.winHousehold.close();
+	}
+}
+
+function odSaveNoSignature_onClick(e){
+	if (e.index == 0){
+		saveChanges();
 	}
 }
 

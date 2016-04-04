@@ -1,7 +1,7 @@
 var serviceAgent = require('serviceAgent');
 var args = arguments[0] || {};
 
-function btnLogout_onClick(){
+function vLogout_onClick(){
 	$.winSearch.close();
 }
  
@@ -71,8 +71,12 @@ function btnSearch_onClick(){
 		firstName = "Fred";
 		lastName = "Jones";
 	}
-	if (!phoneNumber && (!firstName || !lastName)){
-		alert ("Please enter both first name and last name to search");
+	if (!phoneNumber && !firstName && !lastName){
+		alert ("Please enter search criteria");
+		return;
+	}
+	if (!phoneNumber && firstName && !lastName){
+		alert ("Please also enter a last name to search");
 		return;
 	}
 	Alloy.Globals.Loader.show();

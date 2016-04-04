@@ -59,16 +59,28 @@
 	}
 }
 
+"#ivSnpodLogo":{
+	image: "/images/snpod.png",
+	height: 67,
+	width: 120,
+	zIndex: 2,
+	bottom: 60,
+}
+
 "#ivSnhdLogo":{
 	image: "/images/snhd_logo_blue.png",
 	height: 67,
 	width: 120,
 	zIndex: 2,
-	bottom: 115
+	bottom: 142
 }
 
 "#ivSnhdLogo[formFactor=tablet]":{
 	bottom: 220
+}
+
+"#ivSnpodLogo[formFactor=tablet]":{
+	bottom: 138
 }
 
 "#winIndex":{

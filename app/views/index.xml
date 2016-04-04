@@ -7,7 +7,8 @@
 			<Button id="btnLogin" title="LOGIN" onClick="btnLogin_onClick"></Button>
 			<Label id="lblAuthResult"></Label>
 			<View>
-				<ImageView id="ivSnhdLogo"></ImageView>
+				<ImageView id="ivSnpodLogo"></ImageView>
+				<ImageView id="ivSnhdLogo"></ImageView>	
 				<ImageView id="ivFooter" />	
 			</View>
 		</Window>

@@ -4,7 +4,9 @@
 		<View id="vGears" onClick="vGears_onClick">
 			<ImageView id="ivGears"></ImageView>	
 		</View>
-		<Button id="btnLogout" title="Logout" onClick="btnLogout_onClick"></Button>
+		<View id="vLogout" onClick="vLogout_onClick">
+			<Button>Logout</Button>
+		</View>
 		<ScrollView id="vManualSearch">
 			<Button id="btnQr" title="Use QR Reader" onClick="btnQr_onClick"></Button>
 			<TextField id="txtFirstName" hintText="First Name" />
